@@ -22,9 +22,11 @@ x = combinations(13,4)
 y = combinations(52,4)
 print(f'Решение задания 1а -> Р = {x/y*100:.{ROUNDING_SIZE}f} %')
 
-x1 = combinations(4,1)
-x2 = combinations(4,2)
-x3 = combinations(4,3)
+x1 = combinations(4,1)*combinations(48,3)
+x2 = combinations(4,2)*combinations(48,2)
+x3 = combinations(4,3)*combinations(48,1)
+# print(f'x1+x2+x3+1 -> {x1+x2+x3+1:.{ROUNDING_SIZE}f}')
+# print(f'y -> {y:.{ROUNDING_SIZE}f}')
 print(f'Решение задания 1б -> Р = {(x1+x2+x3+1)/y*100:.{ROUNDING_SIZE}f} %')
 
 
