@@ -57,10 +57,14 @@ print(f'Задание 3:   P = {round(bernoulli(144, 70, 0.5)*100,ROUNDING_SIZE
 # Какова вероятность того, что ровно два мяча белые? 
 # Какова вероятность того, что хотя бы один мяч белый?
 p_4 = combinations(7, 2)*combinations(9, 2)/(combinations(10, 2)*combinations(11, 2))
-p_3 = (combinations(7, 1)*combinations(3, 1)*combinations(9, 2)*combinations(2, 0) + combinations(7, 2)*combinations(3, 0)*combinations(9, 1)*combinations(2, 1))/(combinations(10, 2)*combinations(11, 2))
+p_3 = (combinations(7, 1)*combinations(3, 1)*combinations(9, 2)*combinations(2, 0) + 
+       combinations(7, 2)*combinations(3, 0)*combinations(9, 1)*combinations(2, 1)) / (combinations(10, 2)*combinations(11, 2))
 print(f'Задание 4.1:   P = {round(p_4*100,ROUNDING_SIZE)} %')
-p_2 = (combinations(7, 2)*combinations(3, 0)*combinations(9, 0)*combinations(2, 2) + combinations(7, 1)*combinations(3, 1)*combinations(9, 1)*combinations(2, 1) + combinations(7, 0)*combinations(3, 2)*combinations(9, 2)*combinations(2, 0))/(combinations(10, 2)*combinations(11, 2))
+p_2 = (combinations(7, 2)*combinations(3, 0)*combinations(9, 0)*combinations(2, 2) + 
+       combinations(7, 1)*combinations(3, 1)*combinations(9, 1)*combinations(2, 1) + 
+       combinations(7, 0)*combinations(3, 2)*combinations(9, 2)*combinations(2, 0)) / (combinations(10, 2)*combinations(11, 2))
 print(f'Задание 4.2:   P = {round(p_2*100,ROUNDING_SIZE)} %')
-p_1 = (combinations(7, 1)*combinations(3, 1)*combinations(9, 0)*combinations(2, 2) + combinations(7, 0)*combinations(3, 2)*combinations(9, 1)*combinations(2, 1))/(combinations(10, 2)*combinations(11, 2))
+p_1 = (combinations(7, 1)*combinations(3, 1)*combinations(9, 0)*combinations(2, 2) + 
+       combinations(7, 0)*combinations(3, 2)*combinations(9, 1)*combinations(2, 1)) / (combinations(10, 2)*combinations(11, 2))
 print(f'Промежуточные данные: p_1={round(p_1*100,ROUNDING_SIZE)}%, p_2={round(p_2*100,ROUNDING_SIZE)}%, p_3={round(p_3*100,ROUNDING_SIZE)}%, p_4={round(p_4*100,ROUNDING_SIZE)}%')
 print(f'Задание 4.3:   P = {round((p_1+p_2+p_3+p_4)*100,ROUNDING_SIZE)} %')
