@@ -124,9 +124,9 @@ print(f'Задание 4: На факультете А  P={round(a*100,ROUNDING_
 p_1 = 0.1
 p_2 = 0.2
 p_3 = 0.25
-p_all = 1/27*p_1*p_2*p_3
-p_single = 1/3*(p_1 + p_2 + p_3)
-p_two = 1/6*(p_1*p_2 + p_1*p_3 + p_3*p_2)
+p_all = p_1*p_2*p_3
+p_single = p_1 + p_2 + p_3
+p_two = p_1*p_2 + p_1*p_3 + p_3*p_2
 p_1_2 = p_single + p_two
 p_1_3 = p_all + p_single + p_two
 print(f'Задание 5: Все: {round(p_all*100,ROUNDING_SIZE)}%, одна: {round(p_single*100,ROUNDING_SIZE)}%, две: {round(p_two*100,ROUNDING_SIZE)}%, от 1-2: {round(p_1_2*100,ROUNDING_SIZE)}%, хотя бы одна: {round(p_1_3*100,ROUNDING_SIZE)}%')
