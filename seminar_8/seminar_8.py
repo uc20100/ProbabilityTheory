@@ -31,6 +31,9 @@ pandas_cof_cor_pearson = df['zp'].corr(df['ks'], method='pearson')
 print(f'Задание 1.2: pandas:              {round(pandas_cof_cor_pearson, ROUND_NUMBER)}')
 
 plt.scatter(df['zp'], df['ks'])
+plt.title("Задание 1")
+plt.xlabel('zp')
+plt.ylabel('ks')
 plt.show()
 
 
