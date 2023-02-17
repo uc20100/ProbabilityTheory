@@ -57,15 +57,18 @@ plt.show()
 # Посчитать коэффициент линейной регрессии при заработной плате (zp), 
 # используя градиентный спуск (без intercept).
 
+def mse_(B1, x, y, n):
+    return np.sum((B1*x-y)**2)/n
+
 # расчет коэффициента методом градиентного спуска
 # y = b1*x
 alpha = 1e-6
 b_gradient = 0.1
 n = len(zp)
-for i in range(10000):
+for i in range(2000):
     b_gradient -= alpha*(2/n)*np.sum((b_gradient*zp-ks)*zp)
-    if i % 500 == 0:
-        print(f'Задание 2 (y=b*x): iteration: {i}, b: {b_gradient}')
+    if i % 100 == 0:
+        print(f'Задание 2 (y=b*x): iteration: {i}, b: {b_gradient}, mse: {mse_(b_gradient, zp, ks, len(zp))}')
 # отрисовка графика
 plt.scatter(zp,ks)
 # plt.plot(zp, b[0][0] + zp*b[1][0], label='y = b0 + x*b1')
@@ -86,10 +89,10 @@ alpha = 1e-6
 b_gradient = 0.01
 n = len(zp)
 b0 = np.mean(ks)-(np.mean(zp*ks)-np.mean(zp)*np.mean(ks))/(np.mean(zp**2)-np.mean(zp)**2)*np.mean(zp)
-for i in range(10000):
+for i in range(2000):
     b_gradient -= alpha*np.sum((b0 + b_gradient*zp-ks)*zp)
-    if i % 500 == 0:
-        print(f'Задание 3 (y=b0+b1*x): iteration: {i}, b0: {b0}, b1: {b_gradient}')
+    if i % 100 == 0:
+        print(f'Задание 3 (y=b0+b1*x): iteration: {i}, b0: {b0}, b1: {b_gradient}, mse: {mse_(b_gradient, zp, ks, len(zp))}')
 # отрисовка графика
 plt.scatter(zp,ks)
 # plt.plot(zp, b[0][0] + zp*b[1][0], label='y = b0 + x*b1')
